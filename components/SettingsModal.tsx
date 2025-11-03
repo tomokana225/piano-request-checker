@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CogIcon, XIcon } from './IconComponents';
+import { CogIcon, XIcon } from './IconComponents.tsx';
 
 interface SettingsModalProps {
   isOpen: boolean;

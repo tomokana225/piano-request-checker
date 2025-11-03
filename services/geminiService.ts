@@ -1,4 +1,4 @@
-import { YamahaCheckResult, YamahaAPIResponse, GroundingSource } from '../types';
+import { YamahaCheckResult, YamahaAPIResponse, GroundingSource } from '../types.ts';
 
 // IMPORTANT: Replace this with your actual Cloudflare Worker URL
 const WORKER_URL = 'https://piano-request-proxy.tomoyaking0225.workers.dev';

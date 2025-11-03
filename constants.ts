@@ -1,4 +1,4 @@
-import type { Song } from './types';
+import type { Song } from './types.ts';
 
 export const PLAYABLE_SONGS_EXAMPLE: Song[] = [
   { title: "夜に駆ける", artist: "YOASOBI" },

@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import type { Song, YamahaAPIResponse } from './types';
-import { PLAYABLE_SONGS_EXAMPLE } from './constants';
-import { checkPrintGakufu } from './services/geminiService';
-import SearchBar from './components/SearchBar';
-import ResultsDisplay from './components/ResultsDisplay';
-import SettingsModal from './components/SettingsModal';
+import type { Song, YamahaAPIResponse } from './types.ts';
+import { PLAYABLE_SONGS_EXAMPLE } from './constants.ts';
+import { checkPrintGakufu } from './services/geminiService.ts';
+import SearchBar from './components/SearchBar.tsx';
+import ResultsDisplay from './components/ResultsDisplay.tsx';
+import SettingsModal from './components/SettingsModal.tsx';
 
 const defaultPlayableList = PLAYABLE_SONGS_EXAMPLE.map(s => `${s.title},${s.artist}`).join('\n');
 

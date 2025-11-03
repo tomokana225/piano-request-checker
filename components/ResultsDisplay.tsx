@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Song, YamahaAPIResponse } from '../types';
-import { YamahaCheckResult } from '../types';
-import { XCircleIcon, MusicNoteIcon, ExternalLinkIcon, InfoCircleIcon, CheckCircleIcon, QuestionMarkCircleIcon } from './IconComponents';
-import LoadingSpinner from './LoadingSpinner';
+import type { Song, YamahaAPIResponse } from '../types.ts';
+import { YamahaCheckResult } from '../types.ts';
+import { XCircleIcon, MusicNoteIcon, ExternalLinkIcon, InfoCircleIcon, CheckCircleIcon, QuestionMarkCircleIcon } from './IconComponents.tsx';
+import LoadingSpinner from './LoadingSpinner.tsx';
 
 interface ResultsDisplayProps {
   error: string | null;
