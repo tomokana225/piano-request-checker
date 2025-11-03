@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <!--
+      CRITICAL FIX for GitHub Pages: The <base> tag specifies the root path for all relative URLs in the document.
+      This ensures that files like `./App.tsx` are loaded from the correct repository subdirectory.
+    -->
+    <base href="https://tomokana225.github.io/piano-request-checker/" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piano Request Checker</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,10 +39,27 @@
   <body>
     <div id="root"></div>
     <!-- 
-      CRITICAL FIX: Added data-presets="react,typescript" to tell Babel how to transpile the code.
-      This resolves the module loading and MIME type errors.
+      The content of index.tsx has been moved directly into this inline script tag.
+      This solves the MIME type error by preventing the browser from making a separate,
+      problematic request for the .tsx file. Babel transpiles this inline code directly.
     -->
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
+    <script type="text/babel" data-presets="react,typescript" data-type="module">
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './App.tsx';
+
+      const rootElement = document.getElementById('root');
+      if (!rootElement) {
+        throw new Error("Could not find root element to mount to");
+      }
+
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      );
+    </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
